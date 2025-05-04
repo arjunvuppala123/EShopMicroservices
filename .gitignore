@@ -54,3 +54,5 @@ TestResult.xml
 nunit-*.xml
 /.vs
 /EShop-Microservices/.vs/EShop-Microservices/v17
+/EShop-Microservices/.vs/EShop-Microservices/FileContentIndex
+/EShop-Microservices/.vs
