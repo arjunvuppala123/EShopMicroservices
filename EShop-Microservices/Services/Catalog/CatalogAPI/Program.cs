@@ -58,6 +58,10 @@ app.UseExceptionHandler(
     });
 
 app.MapGet("/", () => "Hello World!");
-app.UseHealthChecks("/healths", new HealthCheckOptions { ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse});
+app.UseHealthChecks("/health",
+    new HealthCheckOptions
+    {
+        ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+    });
 
 app.Run();
