@@ -9,6 +9,9 @@ services:
     image: postgres
     volumes:
       - postgres_basket:/var/lib/postgresql/data
+  orderdb:
+    image: mcr.microsoft.com/mssql/server
+
   distributedcache:
     image: redis
 

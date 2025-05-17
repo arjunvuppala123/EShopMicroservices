@@ -4,15 +4,15 @@
     {
         public void Configure(EntityTypeBuilder<OrderItem> builder)
         {
-            builder.HasKey(oi => oi.OrderId);
+            builder.HasKey(oi => oi.Id);
 
             builder.Property(oi => oi.Id).HasConversion(
-                    orderItemId => orderItemId.Value,
-                    dbId => OrderItemId.Of(dbId));
+                                       orderItemId => orderItemId.Value,
+                                       dbId => OrderItemId.Of(dbId));
 
             builder.HasOne<Product>()
                 .WithMany()
-                .HasForeignKey(x => x.ProductId);
+                .HasForeignKey(oi => oi.ProductId);
 
             builder.Property(oi => oi.Quantity).IsRequired();
 

@@ -8,5 +8,7 @@ namespace Ordering.Domain.Abstraction
         public string? CreatedBy { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public string? UpdatedBy { get; set; }
+        public DateTime? LastModified { get; set; }
+        public string? LastModifiedBy { get; set; }
     }
 }

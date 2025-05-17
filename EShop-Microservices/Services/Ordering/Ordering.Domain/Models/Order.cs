@@ -18,7 +18,7 @@ namespace Ordering.Domain.Models
             private set { }
         }
 
-        public static Order Create(OrderId id, CustomerId customerId, OrderName orderName, Address shippingAddress, Address billingAddress, Payment payment, OrderStatus orderStatus)
+        public static Order Create(OrderId id, CustomerId customerId, OrderName orderName, Address shippingAddress, Address billingAddress, Payment payment)
         {
             var order = new Order()
             {
@@ -28,20 +28,20 @@ namespace Ordering.Domain.Models
                 ShippingAddress = shippingAddress,
                 BillingAddress = billingAddress,
                 Payment = payment,
-                Status = orderStatus
+                Status = OrderStatus.Pending
             };
 
             order.AddDomainEvent(new OrderCreatedEvent(order));
             return order;
         }
 
-        public void Update(OrderName orderName, Address shippingAddress, Address billingAddress, Payment payment, OrderStatus orderStatus)
+        public void Update(OrderName orderName, Address shippingAddress, Address billingAddress, Payment payment)
         {
             OrderName = orderName;
             ShippingAddress = shippingAddress;
             BillingAddress = billingAddress;
             Payment = payment;
-            Status = orderStatus;
+            Status = OrderStatus.Pending;
 
             AddDomainEvent(new OrderUpdatedEvent(this));
         }
