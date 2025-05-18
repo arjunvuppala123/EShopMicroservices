@@ -39,7 +39,7 @@
                     orderName: OrderName.Of(orderDto.OrderName),
                     shippingAddress: shippingAddress,
                     billingAddress: bilingAddress,
-                    payment: Payment.Of(orderDto.payment.CardName!, orderDto.payment.CardNumber, orderDto.payment.Expiration, orderDto.payment.CVV, orderDto.payment.PaymentMethod)
+                    payment: Payment.Of(orderDto.Payment.CardName!, orderDto.Payment.CardNumber, orderDto.Payment.Expiration, orderDto.Payment.Cvv, orderDto.Payment.PaymentMethod)
             );
 
             foreach (var item in orderDto.OrderItems)

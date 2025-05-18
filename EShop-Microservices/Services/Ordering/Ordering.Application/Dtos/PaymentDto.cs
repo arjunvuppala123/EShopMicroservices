@@ -4,7 +4,7 @@
         string? CardName,
         string CardNumber,
         string Expiration,
-        string CVV,
+        string Cvv,
         int PaymentMethod
     );
 }
