@@ -26,7 +26,14 @@ services:
     build:
       context: .
       dockerfile: Services/Basket/BasketApi/Dockerfile
+  apigateways:
+    image: ${DOCKER_REGISTRY-}apigateways
+    build:
+      context: .
+      dockerfile: ApiGateways/ApiGateways/Dockerfile
+
 volumes:
   postgres_catalog:
   postgres_basket:
+
 
